@@ -9,17 +9,51 @@
 </head>
 
 <body>
+  <p class="wes">I am Wes, I <em>love</em> to bbq and <strong>make websites</strong></p>
+  <img class="nice" src="https://source.unsplash.com/random/600x600" />
+
   <div class="items">
-    <p>Hi I'm a item</p>
-    <div>
-      <h2>Sub Div</h2>
-      <p>Hi I'm a item</p>
+    <div class="item">
+      <p> Hi I'm a item</p>
+      <img class="custom" data-last="Bos" data-name="Wes" src="https://source.unsplash.com/random/300x300" />
+      <img data-name="kait" src="https://source.unsplash.com/random/300x300" />
+      <img data-name="lux" src="https://source.unsplash.com/random/300x300" />
+      <img src="https://source.unsplash.com/random/300x300" />
 
     </div>
-    <img src="https://source.unsplash.com/random/300x300" />
+    <div class="item2">
+      <img src="https://source.unsplash.com/random/300x300" />
+    </div>
+
+    <h2>
+      Yolo
+      <span>I am hidden!</span>
+      <p class="pizza">Pizza is better if vegan!</p>
+    </h2>
     <p>Hi I'm a item</p>
-    <p>Hi I'm a item</p>
+
+    <div class="item3">
+      <img src="https://source.unsplash.com/random/300x300" />
+      <p>Hi I'm a item</p>
+      <p>Hi I'm a item</p>
+    </div>
   </div>
+  <style>
+    h2 span {
+      display: none;
+    }
+
+    img {
+      transition: all 0.2s;
+    }
+
+    .round {
+      border-radius: 50%;
+      transform: rotate(1turn) scale(2);
+      box-shadow: 0 0 10px black;
+    }
+  </style>
+  <script src="./traversing.js">  </script>
 </body>
 
 </html>
