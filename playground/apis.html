@@ -9,8 +9,26 @@
 </head>
 
 <body>
-  <script>
+  <p class="user"></p>
 
+  <script>function handleError(err) {
+      console.log('OH NO!');
+      console.log(err);
+    }
+
+    const endpoint = 'https://api.github.com/users/taniryla';
+    const userEl = document.querySelector('.user');
+
+    userEl.textContent = 'loading...';
+    const rylandPromise = fetch(endpoint);
+    rylandPromise
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        console.log(data.id);
+        userEl.textContent = `${data.name} - ${data.id}`;
+      })
+      .catch(handleError);
   </script>
 </body>
 
