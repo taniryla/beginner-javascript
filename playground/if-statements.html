@@ -10,8 +10,98 @@
 
 <body>
   <script>
-    if (10 > 2) {
-      console.log('Yep');
+    const age = 100;
+    if (age > 70) {
+      console.log('In your seventies');
+    } else if (age > 60) {
+      console.log('In your sixties');
+    } else if (age > 50) {
+      console.log('In your 50s');
+    } else {
+      console.log('Nothing was true');
+    }
+
+    function slugify(sentence, lowercase) {
+      const slug = sentence.replace(/\s/g, '-');
+      if (lowercase) {
+        return slug.toLowerCase();
+      }
+      return slug;
+
+      const name = 'wes';
+      const last = 'bos';
+      if (name === 'wes' || (name === 'scott' && last === 'bos')) {
+        console.log('Cool Name!');
+      }
+
+      const isAwesomeName = 'awesome'.includes(name);
+      if (isAwesomename) {
+        console.log('SUPER COOL AWESOME NAME');
+      }
+    }
+    console.log(slugify('I am happy', true));
+
+    function nameIsAwesome(name) {
+      return 'awesome'.includes(name);
+    }
+
+    // truthy or falsy
+
+    const = "";
+
+    if (dog) {
+      console.log('you have a dog');
+    } else {
+      console.log('you dont have a dog');
+    }
+
+    const isCool = true;
+
+    if (!isCool) { // bang operator ! can use coercion into a boolean
+      console.log('You are not cool');
+    } else {
+
+    }
+    // ternary
+
+    // const count = 2;
+    // let word;
+    // if (count === 1) {
+    //   word = 'item';
+    // } else {
+    //   word = 'items';
+    // }
+
+    // ternary operator
+
+    const word = count === 1 ? 'item' : 'items';
+
+    const sentence = `You have ${count} ${word} in your cart`;
+    console.log(sentence);
+
+    function showAdminBar() {
+      console.log('showing admin bar');
+    }
+    const isAdmin = true;
+    isAdmin ? showAdminBar() : null;
+
+    // AND AND TRICK!
+
+    function check1() {
+      return true;
+    }
+
+    function check2() {
+      return true;
+    }
+
+    function check3() {
+      return true;
+    }
+    if (check1() && check2() && check3()) {
+      console.log('all checks passed');
+    } else {
+      console.log('some checks failed');
     }
   </script>
 </body>
