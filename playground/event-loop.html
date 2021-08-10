@@ -36,39 +36,39 @@
       opacity: 0;
     }
   </style>
-  <div class="go"> Click Me </div>
+
+  <div class="go">Click Me</div>
+
   <script>
     // console.log('Starting');
     // setTimeout(function () {
-    //   console.log('Running');
+    // console.log('Running');
     // }, 2000);
-    // console.log('ending');
+    // console.log('Ending');
 
-    const go = document.querySelector('.go');
+    const go = document.querySelector('go');
 
-    // Change the text to GO when clicked
+    // 1. Change the text to Go when clicked
+    // THIS IS CALLBACK HELL!!!
 
     go.addEventListener('click', function (e) {
       const el = e.currentTarget;
       el.textContent = 'GO!';
-      console.log(el);
-
-      // Make it a circle after 2 seconds
       setTimeout(function () {
         el.classList.add('circle');
-        // Make it red after 0.5s
+        // 2. Make it a circle after 2 seconds
         setTimeout(function () {
           el.classList.add('red');
-          // Make it square after 0.25s
+          // Make it square after .25s
           setTimeout(function () {
             el.classList.remove('circle');
-            // Make it purple after 0.3s
+            // make it purple after .3s
             setTimeout(function () {
               el.classList.remove('red');
               el.classList.add('purple');
-              // Fade out after 0.5s
+              // fade out after .5s
               setTimeout(function () {
-                el.classList.add('fadeout');
+                el.classList.add('fadeOut');
               }, 500);
             }, 300);
           }, 250);
@@ -76,11 +76,9 @@
       }, 2000);
     });
 
-    // Finish
-
-    console.log(document);
+    // 3. Make it red after 0.5s
   </script>
 </body>
-d
+
 
 </html>

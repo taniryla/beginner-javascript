@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+
+<body>
+    <script>
+        function makePizza(toppings = []) {
+            const pizzaPromise = new Promise(function (resolve, reject) {
+                // reject if people try with pinneapple
+                if (toppings.includes('pineapple')) {
+                    reject('Seriously? Get out 🍍');
+                }
+                const amountOfTimeToBake = 500 + toppings.length * 200;
+                // wait 1 second for the pizza to cool
+                setTimeout(function () {
+                    /* when you are ready, you can resolve this promise */
+                    resolve(`Here is your pizza 🍕 with the toppings ${toppings.join('')}`);
+                }, 1000);
+            });
+            /* if something went wrong, we can reject this promise */
+            return pizzaPromise;
+        }
+
+        const pepperoniPromise = makePizza(['pepperoni']);
+        const canadianPromise = makePizza(['pepperoni', 'mushrooms', 'onions']);
+
+        makePizza(['pepperoni'])
+            .then(function (pizza) {
+                console.log(pizza);
+                return makePizza(['ham', ' cheese']);
+            })
+            .then(function (pizza) {
+                console.log(pizza);
+                return makePizza(['hot peppers', 'onion', 'feta']);
+            });
+
+        makePizza(['cheese', 'pineapple'])
+            .then((pizza) => {
+                console.log(pizza);
+            })
+            .catch((err) => {
+                console.log('Oh no!!!');
+                console.log(err);
+            });
+
+        const p1 = makePizza(['pep']);
+        const p2 = makePizza(['pineapple']);
+
+        const dinnerPromise2 = Promise.allSettled([p1, p2]);
+
+        dinnerPromise2.then((results) => {
+            console.log(results);
+        });
+    </script>
+</body>
+
+</html>
