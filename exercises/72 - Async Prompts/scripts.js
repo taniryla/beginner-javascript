@@ -56,6 +56,9 @@ function ask(options) {
         { once: true }
     );
     
+
+  
+      
   });
 }
 
@@ -73,3 +76,30 @@ async function askQuestion(e) {
 
 const buttons = document.querySelectorAll('[data-question]');
 buttons.forEach((button) => button.addEventListener('click', askQuestion));
+
+const questions = [
+  { title: 'What is your name?' },
+  { title: 'What is your age?', cancel: true },
+  { title: 'What is your dogs name?' },
+];
+
+async function asyncMap(array, callback) {
+  // make an array to store our results
+  const results = [];
+  // loop over our array
+  for (const item of array) {
+    const result = await callback(item);
+    results.push(result);
+  }
+  // when we are done with the loop, return 
+  return results;
+}
+
+async function askMany() {
+  for(const question of questions) {
+    const answer = await ask(question);
+    console.log(answer);
+  }
+}
+
+askMany();
