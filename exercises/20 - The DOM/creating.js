@@ -18,7 +18,7 @@ myDiv.appendChild(myParagraph);
 myDiv.appendChild(myImage);
 document.body.appendChild(myDiv);
 
-// oh shoot! we need to add something to the top like a heading!
+// // oh shoot! we need to add something to the top like a heading!
 
 const heading = document.createElement('h2');
 heading.textContent = 'Cool Things';
@@ -32,6 +32,18 @@ list.appendChild(li1);
 
 document.body.insertAdjacentElement('afterbegin', list);
 
-const li2 = li1.cloneNode(true);
-li2.textContent = 'Two';
-list.insertAdjacentElement('afterbegin', li1);
+const li5 = document.createElement('li');
+li5.textContent = 'Five';
+list.append(li5);
+
+const li2 = lil.cloneNode(true);
+li2.textContent = 'Three';
+list.insertAdjacentElement('afterbegin', lil);
+
+const li3 = lil5.cloneNode(true);
+li3.textContent = 'Three';
+list.insertAdjacentElement('afterbegin', li2);
+
+const li4 = li15.cloneNode(true);
+li4.textContent = 'Two';
+list.insertAdjacentElement('afterbegin', li3);
